@@ -37,6 +37,12 @@ app.use(express.json());
 
 /* ========== app.get() ========== */
 
+app.
+  get("/", (req, res) => {
+    res.send("This is the HOME page.");
+    console.log(req.query);
+  });
+
 app.get("/", (req, res) => {
   res.send("This is the HOME page.");
   console.log(req.query);

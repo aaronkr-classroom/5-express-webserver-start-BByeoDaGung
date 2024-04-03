@@ -1,10 +1,10 @@
 // 9.7.EX.js
 "use strict";
 
-// @TODO: 포트 번호를 지정한다
-// @TODO: express 모듈을 가져온다
-// @TODO: homeController 모듈을 가져온다
-// @TODO: express를 실행한다
+const port = 3000;// @TODO: 포트 번호를 지정한다
+const express = require('express'),// @TODO: express 모듈을 가져온다
+const homeController = require('./controllers/homeContreoller'),// @TODO: homeController 모듈을 가져온다
+const app = express();// @TODO: express를 실행한다
 
 /**
  * Listing 9.5 (p. 149)
@@ -30,8 +30,9 @@ app.get(); // @TODO: "/courses/:courseId"로의 GET 요청 처리 (추가)
 /**
  * 다른 라우트 수정
  */
-app.get(); // @TODO: homeController에서 getHome을 가져와 사용한다
-app.get(); // @TODO: homeController에서 getContact을 가져와 사용한다
-app.post(); // @TODO: homeController에서 postContact을 가져와 사용한다
+app.get("/", homeController.getHome); // @TODO: homeController에서 getHome을 가져와 사용한다
+app.get("/about", homeController.getAbout); // @TODO: homeController에서 getContact을 가져와 사용한다
+app.post("/contact", homeController.getContact); // @TODO: homeController에서 postContact을 가져와 사용한다
+app.post("/contact", homeController.postContact)
 
 app.listen(); // @TODO: 포트 번호를 지정한다. 서버가 실행되면 콘솔에 로그를 남긴다.
